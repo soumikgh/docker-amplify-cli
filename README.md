@@ -7,5 +7,13 @@ It is encouraged to set up an alias so that you don't have to write or memorise 
 
 ```
 cat > ~/.bash_aliases
-alias amplify='docker run --rm -tiv $HOME/.aws:/root/.aws -v $(pwd):/opt/node/app/src ellimistgh/amplify-cli amplify'
+alias amplify='docker run --rm -tiv $HOME/.aws:/root/.aws -v $HOME/.amplify:/root/.amplify -v $(pwd):/opt/node/app/src ellimistgh/amplify-cli amplify'
 ```
+
+Or if you prefer, you can run it directly like
+
+```
+# docker run --rm -tiv $HOME/.aws:/root/.aws -v $HOME/.amplify:/root/.amplify -v $(pwd):/opt/node/app/src ellimistgh/amplify-cli amplify init
+```
+
+It mounts `~/.aws` and `.amplify` to read the AWS credentials and Amplify plugins.json file respectively.
