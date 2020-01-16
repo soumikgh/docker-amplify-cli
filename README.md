@@ -6,7 +6,7 @@ A minimal Alpine image with the [AWS Amplify CLI package](https://www.npmjs.com/
 It is encouraged to set up an alias so that you don't have to write or memorise a lengthy `docker run` command with volumes.
 
 ```
-cat > ~/.bash_aliases
+cat >> ~/.bash_aliases
 alias amplify='docker run --rm -tiv $HOME/.aws:/root/.aws -v $HOME/.amplify:/root/.amplify -v $(pwd):/opt/node/app/src ellimistgh/amplify-cli amplify'
 ```
 
